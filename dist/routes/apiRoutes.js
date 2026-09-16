@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const hydrationController_1 = require("../controllers/hydrationController");
+const orderController_1 = require("../controllers/orderController");
+const contactController_1 = require("../controllers/contactController");
+const router = (0, express_1.Router)();
+router.get('/hydration-calc', hydrationController_1.calculateHydration);
+router.post('/hydration-calc', hydrationController_1.calculateHydration);
+router.post('/order', orderController_1.createOrder);
+router.post('/contact', contactController_1.submitContact);
+exports.default = router;

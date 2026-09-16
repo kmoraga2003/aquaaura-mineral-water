@@ -1,0 +1,517 @@
+{% extends "water_app/base.html" %}
+{% load static %}
+
+{% block title %}AquaAura | Pureza de Manantial Volcánico{% endblock %}
+
+{% block content %}
+<!-- HERO SECTION WITH FLUID WAVE CANVAS -->
+<section class="hero-section" id="hero">
+    <canvas id="waterCanvas" class="hero-canvas"></canvas>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-badge-pill animate-fade-in">
+                <span class="pulse-dot"></span>
+                <span>Manantial Virgen &bull; Embotellado en Origen</span>
+            </div>
+            
+            <h1 class="hero-title animate-slide-up">
+                Agua Mineral Nativa de <span class="text-gradient">Pureza Volcánica</span>
+            </h1>
+            
+            <p class="hero-subtitle animate-slide-up delay-1">
+                Filtrada durante décadas a través de basaltos andinos profundos. Un equilibrio milenario de magnesio, calcio y sílice natural con pH 7.8 para revitalizar tu organismo.
+            </p>
+            
+            <div class="hero-actions animate-slide-up delay-2">
+                <a href="#catalogo" class="btn btn-primary btn-lg btn-glow">
+                    <span>Explorar Colecciones</span>
+                    <i data-lucide="droplet"></i>
+                </a>
+                <a href="#calculadora" class="btn btn-glass btn-lg">
+                    <span>Calculadora de Hidratación</span>
+                    <i data-lucide="calculator"></i>
+                </a>
+            </div>
+
+            <!-- Hero Floating Highlights -->
+            <div class="hero-stats-row animate-fade-in delay-3">
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i data-lucide="mountain"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-num">2.800m</span>
+                        <span class="stat-lbl">Origen Volcánico</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i data-lucide="flask-conical"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-num">pH 7.8</span>
+                        <span class="stat-lbl">Alcalinidad Neutra</span>
+                    </div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-icon"><i data-lucide="sparkles"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-lbl">Minerales Nativo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Interactive Bottle Preview -->
+        <div class="hero-visual animate-float">
+            <div class="bottle-glow"></div>
+            <div class="hero-bottle-card glass-card tilt-element">
+                <div class="bottle-tag">Reserva 750ml</div>
+                <div class="bottle-graphic">
+                    <svg class="bottle-svg" viewBox="0 0 100 240" fill="none">
+                        <!-- Glass Bottle Outline -->
+                        <path d="M42 10 C42 10, 42 30, 40 40 C35 60, 20 80, 20 120 C20 180, 25 220, 50 220 C75 220, 80 180, 80 120 C80 80, 65 60, 60 40 C58 30, 58 10, 58 10 Z" fill="rgba(102, 165, 173, 0.15)" stroke="#66A5AD" stroke-width="2.5"/>
+                        <!-- Cap -->
+                        <rect x="40" y="2" width="20" height="10" rx="2" fill="#E0A96D"/>
+                        <!-- Water Fill Animated -->
+                        <path d="M22 130 Q50 125 78 130 L78 215 C75 218 65 220 50 220 C35 220 25 218 22 215 Z" fill="url(#hero-water-fill)" opacity="0.8"/>
+                        <!-- Inner Label -->
+                        <rect x="28" y="140" width="44" height="40" rx="4" fill="rgba(0, 59, 70, 0.85)" stroke="#66A5AD" stroke-width="1"/>
+                        <text x="50" y="157" fill="#F4F9F9" font-size="7" font-weight="bold" text-anchor="middle">AquaAura</text>
+                        <text x="50" y="168" fill="#E0A96D" font-size="5" text-anchor="middle">MANANTIAL</text>
+                        <defs>
+                            <linearGradient id="hero-water-fill" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#66A5AD" />
+                                <stop offset="100%" stop-color="#003B46" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="bottle-quick-stats">
+                    <span class="badge-mini"><i data-lucide="check"></i> Ca 42mg/L</span>
+                    <span class="badge-mini"><i data-lucide="check"></i> Mg 16mg/L</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ORIGEN & MANANTIAL SECTION -->
+<section class="section section-origen" id="origen">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">El Viaje de la Gota</span>
+            <h2 class="section-title">El Origen en las Profundidades del Basalto</h2>
+            <p class="section-description">
+                El agua AquaAura nace del deshielo glacial en las altas cumbres. Durante más de 80 años se filtra lentamente por napas subterráneas gaining minerales preciosos.
+            </p>
+        </div>
+
+        <div class="timeline-grid">
+            <div class="timeline-card glass-card reveal-on-scroll">
+                <div class="timeline-step">01</div>
+                <div class="timeline-icon"><i data-lucide="snowflake"></i></div>
+                <h3>Deshielo Glacial Pristino</h3>
+                <p>Nuestra historia comienza a 4.000m de altitud con nieves eternas de pureza absoluta libres de contaminación atmosférica.</p>
+            </div>
+
+            <div class="timeline-card glass-card reveal-on-scroll delay-1">
+                <div class="timeline-step">02</div>
+                <div class="timeline-icon"><i data-lucide="layers"></i></div>
+                <h3>Filtración Basáltica de 80 Años</h3>
+                <p>El agua se abre paso lentamente entre estratos volcánicos porosas que retienen impurezas y enriquecen la mineralización.</p>
+            </div>
+
+            <div class="timeline-card glass-card reveal-on-scroll delay-2">
+                <div class="timeline-step">03</div>
+                <div class="timeline-icon"><i data-lucide="sparkle"></i></div>
+                <h3>Enriquecimiento Mineral Nativo</h3>
+                <p>Absorbe de manera natural magnesio biocompatible, calcio de alta absorción y dióxido de sílice beneficioso para las articulaciones.</p>
+            </div>
+
+            <div class="timeline-card glass-card reveal-on-scroll delay-3">
+                <div class="timeline-step">04</div>
+                <div class="timeline-icon"><i data-lucide="shield-check"></i></div>
+                <h3>Embotellado Directo en Origen</h3>
+                <p>Embotellamos sin procesos agresivos de ósmosis ni químicos desmineralizantes, manteniendo viva la estructura del agua.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CALCULADORA DE HIDRATACIÓN INTERACTIVA (DJANGO API INTEGRATED) -->
+<section class="section section-calculator" id="calculadora">
+    <div class="container">
+        <div class="calculator-grid glass-card reveal-on-scroll">
+            <div class="calc-info">
+                <span class="badge-tag">Herramienta de Salud</span>
+                <h2>Calculadora Interactiva de Hidratación Personal</h2>
+                <p>
+                    Descubre cuánta agua mineral necesita tu cuerpo diariamente según tu peso, nivel de actividad física y el clima de tu ciudad.
+                </p>
+
+                <div class="calc-benefits-list">
+                    <div class="benefit-item">
+                        <i data-lucide="heart-pulse"></i>
+                        <span>Optimiza el rendimiento cerebral y muscular</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i data-lucide="sparkles"></i>
+                        <span>Mejora la elasticidad celular mediante sílice orgánico</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i data-lucide="scale"></i>
+                        <span>Equilibra el pH corporal frente a alimentos procesados</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-form-wrapper">
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="weightInput"><i data-lucide="user"></i> Tu Peso Corporal:</label>
+                        <span class="weight-val" id="weightDisplay">70 kg</span>
+                    </div>
+                    <input type="range" id="weightInput" min="40" max="130" value="70" step="1" class="range-slider">
+                </div>
+
+                <div class="form-group">
+                    <label><i data-lucide="activity"></i> Nivel de Actividad Física:</label>
+                    <div class="toggle-buttons-group" id="activityGroup">
+                        <button type="button" class="btn-toggle" data-val="low">Sedentaria / Ligera</button>
+                        <button type="button" class="btn-toggle active" data-val="medium">Moderada (3x sem)</button>
+                        <button type="button" class="btn-toggle" data-val="high">Deportista / Intensa</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i data-lucide="sun"></i> Clima Ambiental:</label>
+                    <div class="toggle-buttons-group" id="climateGroup">
+                        <button type="button" class="btn-toggle active" data-val="normal">Templado / Fresco</button>
+                        <button type="button" class="btn-toggle" data-val="warm">Cálido</button>
+                        <button type="button" class="btn-toggle" data-val="hot">Muy Caluroso / Verano</button>
+                    </div>
+                </div>
+
+                <!-- Dynamic Output Results Box -->
+                <div class="calc-result-box" id="calcResultBox">
+                    <div class="result-metrics">
+                        <div class="metric-main">
+                            <span class="metric-number" id="resultLiters">2.95</span>
+                            <span class="metric-unit">Litros / día</span>
+                        </div>
+                        <div class="metric-sub">
+                            <i data-lucide="cup-soda"></i>
+                            <span>Equivalente a <strong id="resultGlasses">12</strong> vasos de 250ml</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendation-badge" id="resultReasonBox">
+                        <i data-lucide="info"></i>
+                        <p id="resultReasonText">El equilibrio neutro de pH 7.8 de nuestro Manantial Puro es óptimo para tu ingesta diaria.</p>
+                    </div>
+
+                    <button class="btn btn-secondary btn-block" id="addRecommendedBtn">
+                        <i data-lucide="plus-circle"></i>
+                        <span>Añadir Paquete Recomendado al Carrito</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CATALOGO DE PRODUCTOS -->
+<section class="section section-catalogo" id="catalogo">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">Aguas de Autor</span>
+            <h2 class="section-title">Colecciones de Agua Mineral</h2>
+            <p class="section-description">
+                Explora nuestras variedades embotelladas en cristal neutro y formatos retornables para el cuidado de tu salud y el planeta.
+            </p>
+            
+            <!-- Category Filters -->
+            <div class="filter-pills-row">
+                <button class="filter-btn active" data-filter="all">Todas las Variedades</button>
+                <button class="filter-btn" data-filter="still">Sin Gas</button>
+                <button class="filter-btn" data-filter="sparkling">Con Gas Mineral</button>
+                <button class="filter-btn" data-filter="infused">Mineral Infundida</button>
+                <button class="filter-btn" data-filter="eco">Dispensadores 20L</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            {% for product in products %}
+            <div class="product-card glass-card tilt-element" 
+                 data-category="{{ product.category }}"
+                 data-id="{{ product.id }}"
+                 data-name="{{ product.name }}"
+                 data-price="{{ product.price }}"
+                 data-slug="{{ product.slug }}"
+                 data-ph="{{ product.ph_level }}"
+                 data-tds="{{ product.tds_mg_l }}"
+                 data-ca="{{ product.calcium_mg_l }}"
+                 data-mg="{{ product.magnesium_mg_l }}"
+                 data-k="{{ product.potassium_mg_l }}"
+                 data-silica="{{ product.silica_mg_l }}"
+                 data-desc="{{ product.description }}"
+                 data-badge="{{ product.badge }}">
+                
+                {% if product.badge %}
+                <div class="product-badge-tag">{{ product.badge }}</div>
+                {% endif %}
+
+                <div class="product-image-container">
+                    <div class="bottle-visual-wrapper">
+                        <!-- Custom SVG Bottles based on category -->
+                        {% if product.category == 'still' %}
+                        <svg class="product-bottle-svg" viewBox="0 0 100 240" fill="none">
+                            <path d="M42 10 C42 10, 42 30, 40 40 C35 60, 20 80, 20 120 C20 180, 25 220, 50 220 C75 220, 80 180, 80 120 C80 80, 65 60, 60 40 C58 30, 58 10, 58 10 Z" fill="rgba(102, 165, 173, 0.15)" stroke="#66A5AD" stroke-width="2"/>
+                            <rect x="40" y="2" width="20" height="10" rx="2" fill="#E0A96D"/>
+                            <path d="M22 120 Q50 115 78 120 L78 215 C75 218 65 220 50 220 C35 220 25 218 22 215 Z" fill="#003B46" opacity="0.75"/>
+                        </svg>
+                        {% elif product.category == 'sparkling' %}
+                        <svg class="product-bottle-svg" viewBox="0 0 100 240" fill="none">
+                            <path d="M42 10 C42 10, 42 30, 40 40 C35 60, 20 80, 20 120 C20 180, 25 220, 50 220 C75 220, 80 180, 80 120 C80 80, 65 60, 60 40 C58 30, 58 10, 58 10 Z" fill="rgba(7, 87, 91, 0.2)" stroke="#07575B" stroke-width="2"/>
+                            <rect x="40" y="2" width="20" height="10" rx="2" fill="#66A5AD"/>
+                            <path d="M22 110 Q50 105 78 110 L78 215 C75 218 65 220 50 220 C35 220 25 218 22 215 Z" fill="#07575B" opacity="0.8"/>
+                            <circle cx="35" cy="140" r="3" fill="#66A5AD" opacity="0.8" class="bubbly"/>
+                            <circle cx="55" cy="160" r="4.5" fill="#66A5AD" opacity="0.6" class="bubbly"/>
+                            <circle cx="45" cy="180" r="2.5" fill="#66A5AD" opacity="0.9" class="bubbly"/>
+                        </svg>
+                        {% elif product.category == 'infused' %}
+                        <svg class="product-bottle-svg" viewBox="0 0 100 240" fill="none">
+                            <path d="M42 10 C42 10, 42 30, 40 40 C35 60, 20 80, 20 120 C20 180, 25 220, 50 220 C75 220, 80 180, 80 120 C80 80, 65 60, 60 40 C58 30, 58 10, 58 10 Z" fill="rgba(224, 169, 109, 0.15)" stroke="#E0A96D" stroke-width="2"/>
+                            <rect x="40" y="2" width="20" height="10" rx="2" fill="#E0A96D"/>
+                            <path d="M22 130 Q50 125 78 130 L78 215 C75 218 65 220 50 220 C35 220 25 218 22 215 Z" fill="url(#infused-fill)" opacity="0.8"/>
+                            <defs>
+                                <linearGradient id="infused-fill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#E0A96D" />
+                                    <stop offset="100%" stop-color="#003B46" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        {% else %}
+                        <svg class="product-bottle-svg" viewBox="0 0 120 220" fill="none">
+                            <rect x="35" y="10" width="50" height="20" rx="3" fill="#66A5AD"/>
+                            <path d="M20 40 L100 40 L110 80 L110 200 C110 210, 100 215, 90 215 L30 215 C20 215, 10 210, 10 200 L10 80 Z" fill="rgba(102, 165, 173, 0.25)" stroke="#07575B" stroke-width="3"/>
+                            <path d="M12 90 Q60 85 108 90 L108 200 C108 208, 98 213, 88 213 L32 213 C22 213, 12 208, 12 200 Z" fill="#07575B" opacity="0.85"/>
+                        </svg>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="product-content">
+                    <span class="product-container-type"><i data-lucide="package"></i> {{ product.container_type }}</span>
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <p class="product-tagline">{{ product.tagline }}</p>
+
+                    <div class="mineral-mini-pills">
+                        <span title="pH Alcalinidad">pH {{ product.ph_level }}</span>
+                        <span title="Calcio">Ca {{ product.calcium_mg_l }}mg</span>
+                        <span title="Magnesio">Mg {{ product.magnesium_mg_l }}mg</span>
+                    </div>
+
+                    <div class="product-footer">
+                        <div class="price-tag">
+                            <span class="currency">$</span>
+                            <span class="price-val">{{ product.price|floatformat:"0" }}</span>
+                            <span class="tax-info">CLP</span>
+                        </div>
+                        <div class="card-btns">
+                            <button class="btn-icon view-mineral-btn" title="Ver Perfil Mineral Completo">
+                                <i data-lucide="line-chart"></i>
+                            </button>
+                            <button class="btn btn-primary add-to-cart-btn">
+                                <i data-lucide="plus"></i>
+                                <span>Añadir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- TABLA COMPARATIVA MINERAL -->
+<section class="section section-mineral-compare">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">Transparencia en cada Gota</span>
+            <h2 class="section-title">Análisis Comparativo de Agua</h2>
+            <p class="section-description">
+                ¿Por qué el agua mineral de manantial nativo supera al agua filtrada de grifo o desmineralizada?
+            </p>
+        </div>
+
+        <div class="compare-table-wrapper glass-card reveal-on-scroll">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Propiedad / Mineral</th>
+                        <th>Agua de Grifo Habitual</th>
+                        <th>Agua Purificada (Ósmosis)</th>
+                        <th class="highlight-col">AquaAura Manantial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Origen & Filtración</strong></td>
+                        <td>Tratamiento químico municipal</td>
+                        <td>Desmineralización sintética</td>
+                        <td class="highlight-col"><strong>Filtración basáltica 80 años</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nivel de pH</strong></td>
+                        <td>Variables (6.2 - 6.9 ácido)</td>
+                        <td>Neutro-ácido (6.0 - 6.5)</td>
+                        <td class="highlight-col"><strong class="text-green">Alcalino Neutro 7.8</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calcio Nativo (Ca+)</strong></td>
+                        <td>Cloruros / Vestigios</td>
+                        <td>0 mg/L (Removido)</td>
+                        <td class="highlight-col"><strong>42 - 55 mg/L (Óptimo)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Magnesio Biocompatible (Mg+)</strong></td>
+                        <td>Bajo (&lt;3 mg/L)</td>
+                        <td>0 mg/L (Removido)</td>
+                        <td class="highlight-col"><strong>16 - 28 mg/L (Muscular)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sílice Celular (SiO2)</strong></td>
+                        <td>Ausente</td>
+                        <td>Ausente</td>
+                        <td class="highlight-col"><strong>32 - 50 mg/L (Piel & Tejidos)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sodio (Na+)</strong></td>
+                        <td>Alto (&gt;35 mg/L)</td>
+                        <td>Variable</td>
+                        <td class="highlight-col"><strong class="text-green">Bajo en Sodio (&lt;5 mg/L)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- PLANES DE SUSCRIPCIÓN -->
+<section class="section section-subscriptions" id="suscripciones">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-subtitle">Hidratación Automatizada</span>
+            <h2 class="section-title">Planes de Recarga a Domicilio</h2>
+            <p class="section-description">
+                Suscríbete para recibir tus cajas de vidrio o dispensadores retornables con descuento garantizado y envío gratuito en tu comuna.
+            </p>
+        </div>
+
+        <div class="plans-grid">
+            {% for plan in plans %}
+            <div class="plan-card glass-card reveal-on-scroll">
+                <div class="plan-discount-badge">-{{ plan.discount_percent }}% OFF</div>
+                <div class="plan-icon">
+                    {% if plan.icon_name == 'zap' %}
+                    <i data-lucide="zap"></i>
+                    {% elif plan.icon_name == 'home' %}
+                    <i data-lucide="home"></i>
+                    {% else %}
+                    <i data-lucide="building"></i>
+                    {% endif %}
+                </div>
+                <h3>{{ plan.name }}</h3>
+                <div class="plan-freq">Frecuencia: Cada {{ plan.frequency_days }} días</div>
+                <p class="plan-desc">{{ plan.description }}</p>
+                <div class="plan-features">
+                    <span><i data-lucide="check"></i> Envío Gratis a Domicilio</span>
+                    <span><i data-lucide="check"></i> Modifica o Cancela cuando quieras</span>
+                    <span><i data-lucide="check"></i> Retorno de envases sin costo</span>
+                </div>
+                <button class="btn btn-primary btn-block select-plan-btn" 
+                        data-plan-name="{{ plan.name }}" 
+                        data-discount="{{ plan.discount_percent }}">
+                    Suscribirme con -{{ plan.discount_percent }}%
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO & COTIZACIONES -->
+<section class="section section-contacto" id="contacto">
+    <div class="container">
+        <div class="contact-grid glass-card reveal-on-scroll">
+            <div class="contact-info-col">
+                <span class="badge-tag">Atención Personalizada</span>
+                <h2>Contacto & Ventas Corporativas</h2>
+                <p>
+                    ¿Buscas personalizar botellas de vidrio con tu marca para eventos, hoteles o restaurantes? ¿O deseas cotizar volumen para tu empresa?
+                </p>
+                
+                <div class="info-blocks">
+                    <div class="info-block">
+                        <i data-lucide="phone-call"></i>
+                        <div>
+                            <strong>Línea Directa Manantial</strong>
+                            <p>+56 9 8765 4321</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <strong>Correo Electrónico</strong>
+                            <p>contacto@aquaaura.cl</p>
+                        </div>
+                    </div>
+                    <div class="info-block">
+                        <i data-lucide="truck"></i>
+                        <div>
+                            <strong>Cobertura de Despacho</strong>
+                            <p>Región Metropolitana y principales regiones del país</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-col">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Nombre Completo *</label>
+                        <input type="text" id="contactName" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Correo Electrónico *</label>
+                        <input type="email" id="contactEmail" required placeholder="tu@empresa.cl">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Asunto</label>
+                        <select id="contactSubject">
+                            <option value="Consulta General">Consulta General</option>
+                            <option value="Ventas Corporativas">Ventas Corporativas / Restaurantes</option>
+                            <option value="Servicio al Cliente">Servicio al Cliente / Despachos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje *</label>
+                        <textarea id="contactMessage" required rows="4" placeholder="Escribe aquí tu consulta o requerimiento de volumen..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="contactSubmitBtn">
+                        <span>Enviar Mensaje</span>
+                        <i data-lucide="send"></i>
+                    </button>
+                    
+                    <div class="form-alert" id="contactAlert" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

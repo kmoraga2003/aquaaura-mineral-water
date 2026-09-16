@@ -1,0 +1,38 @@
+{
+  "name": "aquaaura-node-firebase",
+  "version": "1.0.0",
+  "description": "AquaAura Mineral Water Startup Web Application migrated from Django to Node.js, Express, and Firebase",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "seed": "tsx src/seed/seedData.ts"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "typescript",
+    "firebase",
+    "aquaaura"
+  ],
+  "author": "AquaAura Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "@types/uuid": "^9.0.8",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,299 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AquaAura | Agua Mineral de Manantial Volcánico{% endblock %}</title>
+    <meta name="description" content="Agua mineral natural de manantial virgen embotellada en origen. Equilibrio superior de pH 7.8, calcio, magnesio y sílice natural.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'water_app/css/styles.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="{% url 'water_app:home' %}" class="brand-logo">
+                <div class="logo-icon-wrapper">
+                    <svg class="drop-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#drop-grad)" stroke="none"/>
+                        <defs>
+                            <linearGradient id="drop-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#66A5AD" />
+                                <stop offset="100%" stop-color="#003B46" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="brand-name">Aqua<span class="brand-accent">Aura</span></span>
+            </a>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#origen" class="nav-link">Origen</a>
+                <a href="#catalogo" class="nav-link">Colecciones</a>
+                <a href="#calculadora" class="nav-link">Calculadora Hidratación</a>
+                <a href="#suscripciones" class="nav-link">Suscripciones</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="cart-trigger-btn" id="cartTrigger" aria-label="Ver Carrito">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <a href="#catalogo" class="btn btn-primary btn-sm btn-glow hide-mobile">Pedir Agua</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menú">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave-top">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 60C240 100 480 20 720 60C960 100 1200 20 1440 60V120H0V60Z" fill="#002229"/>
+            </svg>
+        </div>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <span class="brand-name light">Aqua<span class="brand-accent">Aura</span></span>
+                    </div>
+                    <p class="footer-desc">
+                        Agua mineral natural de manantial virgen embotellada en origen a 2.800 metros de altitud. Pureza sin intervención química, preservando el equilibrio natural del planeta.
+                    </p>
+                    <div class="purity-badges">
+                        <span class="purity-tag"><i data-lucide="shield-check"></i> pH 7.8 Certificado</span>
+                        <span class="purity-tag"><i data-lucide="leaf"></i> Envases 100% Reciclables</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#origen">Origen & Manantial</a></li>
+                        <li><a href="#catalogo">Catálogo de Aguas</a></li>
+                        <li><a href="#calculadora">Calculadora de Hidratación</a></li>
+                        <li><a href="#suscripciones">Planes de Recarga</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Perfil Mineral</h4>
+                    <ul>
+                        <li><span class="mineral-label">pH Neutro:</span> 7.8</li>
+                        <li><span class="mineral-label">Calcio (Ca+):</span> 42-55 mg/L</li>
+                        <li><span class="mineral-label">Magnesio (Mg+):</span> 16-28 mg/L</li>
+                        <li><span class="mineral-label">Sílice (SiO2):</span> 32-50 mg/L</li>
+                        <li><span class="mineral-label">Sodio (Na+):</span> Mínimo (&lt;5 mg/L)</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contacto & Despachos</h4>
+                    <p><i data-lucide="map-pin"></i> Manantiales del Valle Andino, Km 42</p>
+                    <p><i data-lucide="mail"></i> hola@aquaaura.cl</p>
+                    <p><i data-lucide="phone"></i> +56 9 8765 4321</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; {% now "Y" %} AquaAura Mineral Water Co. Todos los derechos reservados. Desarrollado con Django & Python.</p>
+                <div class="legal-links">
+                    <a href="#">Términos & Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Análisis de Laboratorio PDF</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Modal -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i data-lucide="shopping-bag"></i> Tu Carrito AquaAura</h3>
+            <button class="cart-close-btn" id="cartClose"><i data-lucide="x"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Dynamic Cart Content -->
+            <div class="cart-empty" id="cartEmpty">
+                <div class="empty-icon"><i data-lucide="droplet"></i></div>
+                <p>Tu carrito está vacío</p>
+                <span>Explora nuestra selección de aguas minerales y añade tus preferidas.</span>
+            </div>
+            <div class="cart-items-list" id="cartItemsList"></div>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="promo-box">
+                <input type="text" id="promoInput" placeholder="Código de descuento (ej: MANANTIAL10)">
+                <button id="promoBtn">Aplicar</button>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="summary-row discount-row" id="discountRow" style="display: none;">
+                    <span>Descuento Aplicado</span>
+                    <span id="cartDiscount" class="text-green">-$0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Despacho a Domicilio</span>
+                    <span class="text-free">GRATIS</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" id="checkoutBtn">Proceder al Pago & Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkoutModalOverlay">
+        <div class="modal-card">
+            <button class="modal-close" id="checkoutClose"><i data-lucide="x"></i></button>
+            <div class="modal-header">
+                <h2>Finalizar Pedido de Agua Mineral</h2>
+                <p>Ingresa tus datos para despachar a tu domicilio</p>
+            </div>
+            <form id="orderForm" class="checkout-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="custName"><i data-lucide="user"></i> Nombre Completo *</label>
+                        <input type="text" id="custName" required placeholder="Ej: Valentina Morales">
+                    </div>
+                    <div class="form-group">
+                        <label for="custEmail"><i data-lucide="mail"></i> Correo Electrónico *</label>
+                        <input type="email" id="custEmail" required placeholder="ejemplo@correo.cl">
+                    </div>
+                    <div class="form-group">
+                        <label for="custPhone"><i data-lucide="phone"></i> Teléfono Móvil *</label>
+                        <input type="tel" id="custPhone" required placeholder="+56 9 1234 5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="orderType"><i data-lucide="repeat"></i> Modalidad de Pedido</label>
+                        <select id="orderType">
+                            <option value="one_time">Compra Única</option>
+                            <option value="subscription">Suscripción Programada (-15%)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="custAddress"><i data-lucide="map-pin"></i> Dirección de Despacho *</label>
+                        <textarea id="custAddress" required rows="2" placeholder="Av. Las Condes 1234, Dpto 501, Santiago"></textarea>
+                    </div>
+                </div>
+
+                <div class="checkout-summary-mini">
+                    <span>Total a pagar: <strong id="checkoutTotalText">$0</strong></span>
+                    <span class="pay-note"><i data-lucide="lock"></i> Pago seguro a la entrega o transferencia instantánea</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitOrderBtn">
+                    <span>Confirmar Pedido & Embotellar</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </form>
+            
+            <!-- Order Success View -->
+            <div class="order-success-view" id="orderSuccessView" style="display: none;">
+                <div class="success-icon-animated">
+                    <i data-lucide="check-circle-2"></i>
+                </div>
+                <h3>¡Pedido Confirmado con Éxito!</h3>
+                <p class="order-id-badge">Número de Orden: <strong id="successOrderNum">#AQ-8912</strong></p>
+                <p class="success-desc">Gracias <span id="successCustName"></span>. Hemos recibido tu pedido por <strong id="successTotal"></strong>. El lote está ingresando a nuestra línea de embotellado sostenible.</p>
+                
+                <!-- Order Status Tracker Animation -->
+                <div class="order-tracker">
+                    <div class="tracker-step active">
+                        <div class="step-dot"></div>
+                        <span>Recibido</span>
+                    </div>
+                    <div class="tracker-step active pulse">
+                        <div class="step-dot"></div>
+                        <span>Embotellado</span>
+                    </div>
+                    <div class="tracker-step">
+                        <div class="step-dot"></div>
+                        <span>En Camino</span>
+                    </div>
+                    <div class="tracker-step">
+                        <div class="step-dot"></div>
+                        <span>Entregado</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary btn-block" id="closeSuccessModal">Volver a la Tienda</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mineral Chart Modal -->
+    <div class="modal-overlay" id="mineralModalOverlay">
+        <div class="modal-card mineral-modal-card">
+            <button class="modal-close" id="mineralModalClose"><i data-lucide="x"></i></button>
+            <div class="modal-header text-center">
+                <span class="badge-tag" id="modalProductBadge">Insignia</span>
+                <h2 id="modalProductName">AquaAura Manantial Puro</h2>
+                <p id="modalProductTagline">Análisis Cuantitativo de Minerales (mg/L)</p>
+            </div>
+            
+            <div class="mineral-visual-grid">
+                <div class="ph-gauge-card">
+                    <div class="ph-val" id="modalPhVal">7.8</div>
+                    <div class="ph-label">pH Alcalino Neutro</div>
+                    <div class="ph-bar-container">
+                        <div class="ph-marker" id="modalPhMarker" style="left: 78%;"></div>
+                    </div>
+                    <div class="ph-scale-labels">
+                        <span>Ácido (6.0)</span>
+                        <span>Neutro (7.0)</span>
+                        <span>Alcalino (8.5)</span>
+                    </div>
+                </div>
+
+                <div class="mineral-bars-wrapper" id="modalBarsWrapper">
+                    <!-- Dynamic Bars insertion -->
+                </div>
+            </div>
+
+            <div class="mineral-desc-box">
+                <p id="modalProductDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lucide Icon Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="{% static 'water_app/js/main.js' %}"></script>
+</body>
+</html>
